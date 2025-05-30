@@ -1,0 +1,1025 @@
+/* Custom Properties for Colors */
+:root {
+    --primary-color: #004d40; /* Dark Teal */
+    --secondary-color: #ffb300; /* Amber */
+    --accent-color: #a7ffeb; /* Light Teal */
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+    --white-bg: #fff;
+    --dark-grey: #666;
+    --light-grey: #e0e0e0;
+    --dark-footer: #222;
+}
+
+/* Basic Reset & Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Prevent horizontal scroll from elements */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar .logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.navbar .main-nav {
+    display: block; /* Show by default for larger screens */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 25px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+    color: var(--accent-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.login-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-button:hover {
+    background-color: #ffc107;
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-text {
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-buttons .primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.hero-buttons .primary-btn:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+.hero-buttons .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.hero-buttons .secondary-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.hero-image img {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+/* Sermons & Events Section */
+.sermons-events-section,
+.what-we-believe-section,
+.connect-pastor-section,
+.join-church-section,
+.prayer-requests-section,
+.online-giving-section,
+.church-location-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.sermons-events-section, .join-church-section, .prayer-requests-section {
+    background-color: var(--white-bg);
+}
+
+.what-we-believe-section, .online-giving-section {
+    background-color: var(--light-bg);
+}
+
+.connect-pastor-section {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.church-location-section {
+    background-color: var(--accent-color); /* Light teal background */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Override h2 color for sections with dark backgrounds */
+.connect-pastor-section h2 {
+    color: white;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+}
+
+.tab-button {
+    background-color: var(--light-grey);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 5px 10px; /* Adjust margin for wrapped tabs */
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #c0c0c0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.sermon-grid, .event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sermon-card, .event-card {
+    background-color: var(--white-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+    position: relative;
+    padding-bottom: 20px; /* Space for button and bookmark */
+}
+
+.sermon-card:hover, .event-card:hover {
+    transform: translateY(-5px);
+}
+
+.sermon-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sermon-card h3, .event-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 15px 15px 10px;
+}
+
+.sermon-card p, .event-card p {
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    margin: 0 15px 10px;
+}
+
+.sermon-date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.btn.card-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.card-btn:hover {
+    background-color: #ffc107;
+}
+
+.bookmark-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #777;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.bookmark-icon:hover {
+    color: var(--primary-color);
+}
+
+.bookmark-icon i.fas {
+    color: var(--primary-color); /* Color when bookmarked */
+}
+
+.event-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ensure consistency for event cards */
+}
+
+.event-card p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.event-card p i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* What We Believe Section */
+.what-we-believe-section {
+    background-color: var(--light-bg);
+}
+
+.belief-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--white-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.belief-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--dark-grey);
+}
+
+.belief-content .btn {
+    margin-top: 20px;
+}
+
+/* Connect with Pastor Section */
+.connect-pastor-section {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pastor-card {
+    background-color: #006064; /* Slightly lighter teal */
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pastor-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 20px;
+}
+
+.pastor-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.pastor-buttons .btn {
+    margin: 0 10px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pastor-buttons .primary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.pastor-buttons .primary-btn:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+.pastor-buttons .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.pastor-buttons .secondary-btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Form Styles (General) */
+.membership-form, .prayer-request-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 77, 64, 0.2); /* Soft shadow on focus */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Make checkbox slightly larger */
+}
+
+.btn.primary-btn[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.primary-btn[type="submit"]:hover {
+    background-color: #003630;
+}
+
+/* Error messages for forms */
+.error-message {
+    color: #d32f2f; /* Red for errors */
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block; /* Ensures it takes up its own line */
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid,
+.form-group select.invalid {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+
+.giving-subtext {
+    font-size: 1.1rem;
+    color: var(--dark-grey);
+    margin-bottom: 30px;
+}
+
+.make-donation-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.make-donation-btn:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+/* Church Location Section */
+.church-location-section {
+    background-color: var(--accent-color);
+}
+
+.church-location-section h2 {
+    color: var(--primary-color);
+}
+
+.location-details-map {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.location-details-card {
+    background-color: var(--white-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.location-details-card p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.location-details-card p i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.location-details-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.location-details-card a:hover {
+    text-decoration: underline;
+}
+
+.location-buttons {
+    margin-top: 25px;
+    display: flex; /* For horizontal buttons */
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.location-buttons .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.location-buttons .primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.location-buttons .primary-btn:hover {
+    background-color: #003630;
+    transform: translateY(-2px);
+}
+
+.location-buttons .secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.location-buttons .secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.map-placeholder {
+    flex: 2;
+    min-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+.detailed-footer {
+    background-color: var(--dark-footer);
+    color: white;
+    padding: 60px 0 20px;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-col p, .footer-col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-col p i {
+    margin-right: 10px;
+    color: #ddd;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+/* Modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Add some padding */
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--white-bg);
+    margin: auto; /* Center the modal content */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.video-modal-content {
+    max-width: 900px; /* Wider for videos */
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.modal-content .form-group label {
+    font-size: 1rem;
+}
+
+.modal-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.modal-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.modal-link a:hover {
+    text-decoration: underline;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: black; /* Background for video loading */
+    border-radius: 5px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1500;
+}
+
+.back-to-top-btn:hover {
+    background-color: #003630;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .navbar .main-nav {
+        display: none; /* Hide main nav on mobile */
+        position: absolute;
+        top: 80px; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .navbar .main-nav.active {
+        display: block; /* Show when active */
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links li a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .login-button {
+        margin-right: 15px; /* Space between login and hamburger */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .sermon-grid, .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pastor-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pastor-buttons .btn {
+        margin: 0;
+        width: 100%;
+    }
+
+    .membership-form, .prayer-request-form, .location-details-card, .map-placeholder, .belief-content {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .location-details-map {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .location-buttons .btn {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col p, .footer-col ul {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+    }
+    .social-icons a {
+        margin: 0 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 10px; /* Prevent modal from touching edges */
+    }
+
+    .back-to-top-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Animations for mobile menu */
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
